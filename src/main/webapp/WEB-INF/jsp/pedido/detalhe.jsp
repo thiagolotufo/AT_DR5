@@ -22,12 +22,30 @@
 						<input type="text" class="form-control" name="descricao">
 					</p>
 				</div>
+				
+				<div class="form-group">
+					<label>Informe o cliente:</label> 
+					<select class="form-control" name="cliente.id">
+						<c:forEach var="c" items="${clientes}">
+							<option value="${c.id}">${c.nome}</option>
+						</c:forEach>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label>Informe o usuario:</label> 
+					<select class="form-control" name="usuario.id">
+						<c:forEach var="u" items="${usuarios}">
+							<option value="${u.id}">${u.nome}</option>
+						</c:forEach>
+					</select>
+				</div>
 
 				<div class="conteudo-table conteudo">
 					<button type="submit" class="btn btn-outline-secondary">Cadastrar</button>
 				</div>
 			</form>
-			
+
 			<div class="separador"></div>
 			<form action="/" method="get">
 				<button type="submit" class="btn btn-outline-secondary">Voltar</button>

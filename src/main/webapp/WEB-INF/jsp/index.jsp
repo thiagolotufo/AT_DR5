@@ -28,6 +28,10 @@
 			<form action="/cliente" method="get">
 				<button type="submit" class="btn btn-outline-secondary">Cadastrar cliente</button>
 			</form>
+			<div class="separador"></div>
+			<form action="/usuario" method="get">
+				<button type="submit" class="btn btn-outline-secondary">Cadastrar usuario</button>
+			</form>
 		</div>
 	</div>
 </body>
