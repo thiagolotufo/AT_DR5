@@ -18,6 +18,8 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String descricao;
+	private float valorTotal;
+	private String enderecoEntrega;
 	@OneToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
@@ -56,8 +58,24 @@ public class Pedido {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
-	
-	
+
+	public float getValorTotal() {
+
+		return valorTotal;
+	}
+
+	public void setValorTotal(float valorTotal) {
+
+		this.valorTotal = valorTotal;
+	}
+
+	public String getEnderecoEntrega() {
+
+		return enderecoEntrega;
+	}
+
+	public void setEnderecoEntrega(String enderecoEntrega) {
+		this.enderecoEntrega = enderecoEntrega;
+	}
 	
 }

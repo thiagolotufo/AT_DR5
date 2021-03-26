@@ -42,8 +42,8 @@
 			</form>
 
 			<div class="separador"></div>
-			<form action="/" method="get">
-				<button type="submit" class="btn btn-outline-secondary">Voltar</button>
+			<form action="/home" method="get">
+				<button type="submit" class="btn btn-outline-secondary">Home</button>
 			</form>
 			<div class="separador"></div>
 			

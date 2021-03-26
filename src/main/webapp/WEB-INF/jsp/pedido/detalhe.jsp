@@ -32,23 +32,14 @@
 					</select>
 				</div>
 				
-				<div class="form-group">
-					<label>Informe o usuario:</label> 
-					<select class="form-control" name="usuario.id">
-						<c:forEach var="u" items="${usuarios}">
-							<option value="${u.id}">${u.nome}</option>
-						</c:forEach>
-					</select>
-				</div>
-
 				<div class="conteudo-table conteudo">
 					<button type="submit" class="btn btn-outline-secondary">Cadastrar</button>
 				</div>
 			</form>
 
 			<div class="separador"></div>
-			<form action="/" method="get">
-				<button type="submit" class="btn btn-outline-secondary">Voltar</button>
+			<form action="/home" method="get">
+				<button type="submit" class="btn btn-outline-secondary">Home</button>
 			</form>
 			<div class="separador"></div>
 			<div class="conteudo-table">
@@ -58,13 +49,14 @@
 						<thead>
 							<tr>
 								<th>Descrição</th>
-								<th></th>
+								<th>Cliente</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="p" items="${pedidos}">
 								<tr>
 									<td>${p.descricao}</td>
+									<td>${p.cliente.nome}</td>
 									<td><a class="icon-links" href="/pedido/${p.id}/excluir">
 											<img src="<c:url value="img\\icon-trash.png"/>" alt="excluir"
 											width="30" height="30" />

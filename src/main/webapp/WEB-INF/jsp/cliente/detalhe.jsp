@@ -22,15 +22,15 @@
 						<input type="text" class="form-control" name="nome">
 					</p>
 				</div>
-				
+
 				<div class="conteudo-table conteudo">
 					<button type="submit" class="btn btn-outline-secondary">Cadastrar</button>
 				</div>
 			</form>
-			
+
 			<div class="separador"></div>
-			<form action="/" method="get">
-				<button type="submit" class="btn btn-outline-secondary">Voltar</button>
+			<form action="/home" method="get">
+				<button type="submit" class="btn btn-outline-secondary">Home</button>
 			</form>
 			<div class="separador"></div>
 			<div class="conteudo-table">
@@ -57,6 +57,11 @@
 							</c:forEach>
 						</tbody>
 					</table>
+				</c:if>
+				<c:if test="${not empty msg}">
+					<div class="alert alert-danger">
+						<strong>Exclusão falhou. </strong> ${msg}
+					</div>
 				</c:if>
 				<c:if test="${empty clientes}">
 					<h3>Nenhum cliente cadastrado!</h3>

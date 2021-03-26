@@ -21,10 +21,24 @@ public class Usuario {
 	private String email;
 	private String cpf;
 	private String telefone;
+	private String senha;
+	private String git;
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
 	private List<Pedido> pedido;
 	
+	public String getGit() {
+		return git;
+	}
+	public void setGit(String git) {
+		this.git = git;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	public int getId() {
 		return id;
 	}

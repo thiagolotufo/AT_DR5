@@ -14,24 +14,40 @@
 <body>
 	<div class="container">
 		<div class="conteudo">
-			<h2>${user.nome}</h2>
-			<h5>${user.email}</h5>
-			<a href="${user.git}"> <img src="../img/git-img.png"
-				alt="descrição da imagem" width="120" height="120" />
-			</a>
-			<h6>${git}</h6>
+			<h2>Sistema de Pedidos</h2>
+			<h5>Acesse seu portal</h5>
 
-			<form action="/pedido" method="get">
-				<button type="submit" class="btn btn-outline-secondary">Cadastrar pedido</button>
+			<form action="/usuario/login" method="post">
+				<div class="form-group">
+					<label>Email:</label>
+					<p>
+						<input type="text" class="form-control" name="email">
+					</p>
+					<label>Senha:</label>
+					<p>
+						<input type="password" class="form-control" name="senha">
+					</p>
+				</div>
+
+				<div class="conteudo-table conteudo">
+					<button type="submit" class="btn btn-outline-secondary">Login</button>
+				</div>
+				
+				<div class="separador"></div>
+
+				<c:if test="${not empty msg}">
+					<div class="alert alert-danger">
+						<strong>Login falhou. </strong> ${msg}
+					</div>
+				</c:if>
 			</form>
+
 			<div class="separador"></div>
-			<form action="/cliente" method="get">
-				<button type="submit" class="btn btn-outline-secondary">Cadastrar cliente</button>
-			</form>
-			<div class="separador"></div>
+
 			<form action="/usuario" method="get">
 				<button type="submit" class="btn btn-outline-secondary">Cadastrar usuario</button>
 			</form>
+
 		</div>
 	</div>
 </body>

@@ -28,4 +28,10 @@ public class UsuarioService {
 		
 		usuarioRepository.deleteById(id);
 	}
+	
+	public Usuario autenticacao(String email, String senha) {
+		
+		
+		return usuarioRepository.autenticacao(email, senha);
+	}
 }
