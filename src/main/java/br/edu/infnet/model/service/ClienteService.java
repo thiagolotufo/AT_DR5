@@ -3,9 +3,11 @@ package br.edu.infnet.model.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.model.negocio.Cliente;
+import br.edu.infnet.model.negocio.Usuario;
 import br.edu.infnet.model.repository.IClienteRepository;
 
 @Service
@@ -27,5 +29,10 @@ public class ClienteService {
 	public void excluir(Integer id) {
 		
 		clienteRepository.deleteById(id);
+	}
+	
+	public List<Cliente> obterLista(Usuario usuario) {
+
+		return (List<Cliente>) clienteRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 	}
 }

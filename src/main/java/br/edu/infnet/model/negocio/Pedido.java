@@ -18,6 +18,7 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String descricao;
+	private String formaDePagamento;
 	private float valorTotal;
 	private String enderecoEntrega;
 	@OneToOne(cascade = CascadeType.DETACH)
@@ -34,7 +35,13 @@ public class Pedido {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	public String getFormaDePagamento() {
+		return formaDePagamento;
+	}
 
+	public void setFormaDePagamento(String formaDePagamento) {
+		this.formaDePagamento = formaDePagamento;
+	}
 	public int getId() {
 		return id;
 	}
