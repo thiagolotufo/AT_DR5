@@ -122,8 +122,13 @@
 							</tbody>
 						</table>
 					</c:if>
+					<c:if test="${not empty msg}">
+						<div class="alert alert-danger">
+							<strong>Exclusão falhou. </strong> ${msg}
+						</div>
+					</c:if>
 					<c:if test="${empty usuarios}">
-						<h3>Nenhum pedido cadastrado!</h3>
+						<h3>Nenhum usuário cadastrado!</h3>
 					</c:if>
 				</div>
 			</div>

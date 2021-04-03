@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.model.negocio.Usuario;
@@ -36,9 +37,19 @@ public class UsuarioController {
 	}
 	
 	@GetMapping(value = "/usuario/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
+	public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 		
-		usuarioService.excluir(id);
+		try {
+			if(usuario.getPedido() == null && usuario.getCliente() == null) {
+				usuarioService.excluir(id);
+			} else {
+				model.addAttribute("msg", "Não é possível exlcluir!");
+				return mostrarDetalhe(model);
+			}
+		} catch (Exception e) {
+			model.addAttribute("msg", "Não é possível exlcluir!");
+			return mostrarDetalhe(model);
+		}
 		
 		return "redirect:/usuario";
 	}

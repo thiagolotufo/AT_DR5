@@ -26,9 +26,18 @@ public class Usuario {
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
 	private List<Pedido> pedido;
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Cliente> cliente;
 	
 	public String getGit() {
 		return git;
+	}
+	public List<Cliente> getCliente() {
+		return cliente;
+	}
+	public void setCliente(List<Cliente> cliente) {
+		this.cliente = cliente;
 	}
 	public void setGit(String git) {
 		this.git = git;

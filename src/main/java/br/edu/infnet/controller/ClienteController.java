@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import br.edu.infnet.model.negocio.Cliente;
 import br.edu.infnet.model.negocio.Usuario;
 import br.edu.infnet.model.service.ClienteService;
 
 @Controller
+@SessionAttributes("user")
 public class ClienteController {
 	
 	@Autowired
